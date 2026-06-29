@@ -1,0 +1,79 @@
+*{
+            box-sizing: border-box;
+            margin: 0;
+        }
+         .loan-card{
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 15px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba;
+            margin-top: 20px;
+        }
+        h2{
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            
+            
+        }
+
+        .input-group{
+            margin-bottom: 20px;
+        }
+        label{
+            display: flex;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: black;
+        }
+  
+         input{
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus{
+            outline: none;
+            border-color: #4a90e2;
+        }
+        input::placeholder{
+            color: #bbb;
+        }
+        
+        select, textarea{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        textarea{
+            height: 100px;
+            resize: vertical;
+        }
+        .submit-button{
+            width: 100%;
+            padding: 14px;
+            background-color: #2b44ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .submit-button:hover{
+            background-color: #1a2ebf;
+        }
+
+
