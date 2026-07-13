@@ -124,7 +124,7 @@ function Navbar() {
         </div>
       </div>
 
-      <div className='{mobile-menu ${mobileMenuOpen ? "open" : ""}}'>
+      <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
         <Link to="/" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
         <Link to="/loans" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Loans</Link>
         <Link to="/about" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>About</Link>
