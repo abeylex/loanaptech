@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./Login.css";
+import "./Signup.css";
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
-    password: ""
+    phone: "",
+    password: "",
+    confirmPassword: ""
   });
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -22,22 +26,34 @@ const Login = () => {
     e.preventDefault();
     setError("");
 
-    if (!formData.email || !formData.password) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.password) {
       setError("Please fill in all fields");
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters");
       return;
     }
 
     setLoading(true);
 
     try {
-      const response = await fetch("https://loanaptech-ijz6.onrender.com/api/auth/login", {
+      const response = await fetch("https://loanaptech-ijz6.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        credentials: "include", 
+        credentials: "include",
         body: JSON.stringify({
+          name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           password: formData.password
         })
       });
@@ -45,13 +61,11 @@ const Login = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Login failed");
+        throw new Error(data.error || "Registration failed");
       }
 
-
-      localStorage.setItem("user", JSON.stringify(data.user));
-
-      navigate("/dashboard");
+      alert("Registration successful! Please login.");
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     } finally {
@@ -61,16 +75,34 @@ const Login = () => {
 
   return (
     <div className="auth-container">
-      <h2>Welcome Back</h2>
+      <h2>Create your account</h2>
       
       <form onSubmit={handleSubmit}>
         {error && <div className="error-message">{error}</div>}
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
 
         <input
           type="email"
           name="email"
           placeholder="Email address"
           value={formData.email}
+          onChange={handleChange}
+          required
+        />
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          value={formData.phone}
           onChange={handleChange}
           required
         />
@@ -84,16 +116,25 @@ const Login = () => {
           required
         />
 
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          required
+        />
+
         <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
+          {loading ? "Signing up..." : "Sign up"}
         </button>
 
-        <div className="signup-link">
-          <Link to="/signup">Don't have an account? Sign up</Link>
+        <div className="login-link">
+          <Link to="/login">Already have an account? Login</Link>
         </div>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

@@ -85,40 +85,6 @@
   transform: translateY(1px);
 }
 
-.auth-container button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Error message styling */
-.error-message {
-  color: #ff6b6b;
-  background-color: rgba(255, 107, 107, 0.1);
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  text-align: center;
-  border: 1px solid rgba(255, 107, 107, 0.3);
-}
-
-/* Signup link styling */
-.signup-link {
-  text-align: center;
-  margin-top: 20px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.signup-link a {
-  color: #a78bfa;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.signup-link a:hover {
-  color: #8b5cf6;
-}
-
 /* Responsive for mobile */
 @media (max-width: 480px) {
   .auth-container form {
