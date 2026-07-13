@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-       
+       <Navbar />
         <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -26,10 +26,6 @@ function App() {
          <Route path="/" element={<Home />} />
          <Route path="/signup" element={<Signup />} />
          <Route path="/dashboard" element={<Dashboard />} />
-         <Route path="/navbar" element={<Navbar />} />
-         
-
-        
         
         </Routes>
         <Footer />
