@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 import Login from "./pages/Login";
 import Apply from "./pages/Apply";
 import Home from "./pages/Home";
-import Footer from "./pages/Footer";
+import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -19,11 +19,12 @@ function App() {
       <div className='App'>
        <Navbar />
         <Routes>
+           <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
          <Route path="/apply" element={<Apply />} />
-         <Route path="/" element={<Home />} />
+        
          <Route path="/signup" element={<Signup />} />
          <Route path="/dashboard" element={<Dashboard />} />
         
