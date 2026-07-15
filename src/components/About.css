@@ -75,7 +75,7 @@ h3{
 .cards{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 290px;
     height: 200px;
     background: linear-gradient(145deg, #2fdbfe, #2fdbfe);
     justify-content: center;
