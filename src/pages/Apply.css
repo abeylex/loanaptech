@@ -1,80 +1,84 @@
-*{
-            box-sizing: border-box;
-            margin: 0;
-        }
-         .loan-card{
-            background-color: white;
-            width: 100%;
-            max-width: 500px;
-            padding: 40px;
-            border-radius: 15px;
-            margin: auto;
-            box-shadow: 0 10px 25px rgba;
-            margin-top: 20px;
-        }
-        h2{
-            text-align: center;
-            color: #1a1a1a;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            
-            
-        }
+.apply-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        .input-group{
-            margin-bottom: 20px;
-        }
-        label{
-            display: flex;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: black;
-        }
-  
-         input{
-            width: 100%;
-            padding: 12px 15px;
-            border: 1.5px solid #e1e1e1;
-            border-radius: 8px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
+.apply-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+}
 
-        input:focus{
-            outline: none;
-            border-color: #4a90e2;
-        }
-        input::placeholder{
-            color: #bbb;
-        }
-        
-        select, textarea{
-            width: 100%;
-            padding: 12px;
-            border: 1px solid aliceblue;
-            background: aliceblue;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-        textarea{
-            height: 100px;
-            resize: vertical;
-        }
-        .submit-button{
-            width: 100%;
-            padding: 14px;
-            background-color: #2b44ff;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .submit-button:hover{
-            background-color: #1a2ebf;
-        }
+.apply-title {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #1e293b;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
 
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: #fafafa;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.apply-submit-btn {
+  margin-top: 20px;
+  padding: 18px;
+  background: #4f46e5;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.apply-submit-btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
