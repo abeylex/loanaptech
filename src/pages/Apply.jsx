@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Apply.css';  
 
-function ApplyLoan () {
+function Apply () {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
