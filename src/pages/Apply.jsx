@@ -143,4 +143,4 @@ function Apply () {
   );
 };
 
-export default ApplyLoan;
+export default Apply;
